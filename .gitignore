@@ -127,3 +127,14 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# JetBRains
+.idea/
+
+# Default ignored files
+/shelf/
+/workspace.xml
+
+# Poetry
+poetry.lock
+pyproject.toml
