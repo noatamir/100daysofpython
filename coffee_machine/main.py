@@ -46,8 +46,8 @@ def collect_coins(order):
     quarters = int(input("How many quarters? "))
     dimes = int(input("How many dimes? "))
     nickels = int(input("How many nickels? "))
-    cents = int(input("How many cents? "))
-    total = .25 * quarters + .1 * dimes + .05 * nickels + .01 * cents
+    pennies = int(input("How many pennies? "))
+    total = .25 * quarters + .1 * dimes + .05 * nickels + .01 * pennies
     change = total - MENU[order]["cost"]
     if change > 0:
         print(f"Here is ${change} in change.")
@@ -73,9 +73,13 @@ def validate(order):
 
 def coffee_machine():
     stay_on = True
-    while stay_on:
+    while stay_on == True:
         order = input("What would you like? (espresso/latte/cappuccino): ")
-        lets_make_it = validate(order)
+        if order == "off":
+            stay_on = False
+            break
+        else:
+            lets_make_it = validate(order)
         if lets_make_it:
             if collect_coins(order):
                 make_coffee(order)
